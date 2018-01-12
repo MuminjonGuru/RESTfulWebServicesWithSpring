@@ -18,9 +18,11 @@ public class RESTfulWebService {
 	@Bean
 	CommandLineRunner initData(EmployeeRepository employeeRepository, ManagerRepository managerRepository) {
 		return args -> {
+			// Manager object creating
 			Manager m = managerRepository.save(new Manager("Steve"));
 			Manager m2 = managerRepository.save(new Manager("Bill"));
 			
+			// Employee object creating
 			employeeRepository.save(new Employee("John", "Jackson", "Software Tester", m));
 			employeeRepository.save(new Employee("Alex", "Fury", "Web Developer", m));
 			employeeRepository.save(new Employee("Lee", "Ronald", "Software Engineer", m));
